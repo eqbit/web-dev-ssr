@@ -1,0 +1,21 @@
+{
+  "name": "eq-ssr",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node index.js"
+  },
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "express": "^4.17.1",
+    "next": "^8.1.0",
+    "node-sass": "^4.12.0",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "react": "^16.8.6"
+  }
+}
