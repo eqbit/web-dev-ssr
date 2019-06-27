@@ -1,16 +1,12 @@
-import Header from '../src/components/Header'
+import Layout from '../src/hoc/Layout';
+import {Container, PageTitle, Article} from '../src/components/Styled'
 
-const textStyle = {
-  marginTop: 40
-}
-
-export default () => {
-  return (
-    <>
-      <Header/>
-      <div style={textStyle}>
-        Условия работы
-      </div>
-    </>
-  )
-}
+export default () => (
+  <>
+    <Layout>
+      <Container>
+        <PageTitle>Условия работы</PageTitle>
+      </Container>
+    </Layout>
+  </>
+);

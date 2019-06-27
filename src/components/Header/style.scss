@@ -1,6 +1,18 @@
+@import '../../scss/colors';
+@import '../../scss/mixins';
+
 .header {
   padding: 50px 0;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 60px;
+
+  @include mq(1023px) {
+    margin-bottom: 50px;
+  }
+
+  @include mq(767px) {
+    margin-bottom: 40px;
+  }
 }
 
 .row {
@@ -18,6 +30,7 @@
   line-height: 26px;
   color: #333;
   text-decoration: none;
+  font-weight: bold;
 
   & + & {
     margin-left: 35px;
