@@ -1,4 +1,4 @@
-import routes from '../../api/routes';
+import {routes} from '../../api/routes';
 
 class Posts extends React.PureComponent {
   constructor(){

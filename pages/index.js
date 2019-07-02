@@ -1,19 +1,18 @@
-import Layout from '../src/hoc/Layout';
-import {Container, PageTitle, Article} from '../src/components/Styled';
+import Layout from '../src/hoc/layout';
+import {TopBlock} from '../src/components/blocks/top-block';
+import {Kpi} from '../src/components/blocks/kpi';
+import {PortfolioTiles} from '../src/components/blocks/portfolio-tiles';
+import {Principles} from '../src/components/blocks/principles';
+import {Call} from '../src/components/blocks/call';
 
 export default () => (
   <>
-    <style jsx>{`
-      .accented {
-        color: #4E00F7;
-      }
-    `}</style>
-    
     <Layout>
-      <Container>
-        <PageTitle>Создаем <span className='accented'>продающие</span> сайты</PageTitle>
-        <Article>Выполняем работу качественно и в срок</Article>
-      </Container>
+      <TopBlock/>
+      <Kpi/>
+      <PortfolioTiles/>
+      <Principles/>
+      <Call/>
     </Layout>
   </>
 )

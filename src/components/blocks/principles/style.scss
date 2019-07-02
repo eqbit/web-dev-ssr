@@ -1,0 +1,39 @@
+@import "../../../scss/colors";
+@import "../../../scss/mixins";
+
+.principlesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 40px;
+  margin-top: 40px;
+
+  @include mq(1199px) {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));;
+  }
+}
+
+.principlesItem {
+  &Title {
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 164.06%;
+    color: #333;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 200px;
+      height: 2px;
+      background: $primary;
+      margin-top: 25px;
+    }
+  }
+
+  &Text {
+    font-size: 16px;
+    line-height: 164.06%;
+    color: #333;
+    margin-top: 30px;
+  }
+}
+

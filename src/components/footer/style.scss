@@ -1,0 +1,111 @@
+@import "../../scss/mixins";
+@import "../../scss/colors";
+
+.footerContainer {
+  margin-top: 80px;
+  background: #171932;
+  padding: 60px 0;
+  color: #FFF;
+
+  @include mq(1023px) {
+    margin-top: 60px;
+  }
+
+  @include mq(767px) {
+    margin-top: 40px;
+  }
+}
+
+.footerRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: -20px;
+  align-items: center;
+}
+
+.footerRowItem {
+  margin: 20px;
+}
+
+.copy {
+  font-size: 14px;
+  line-height: 20px;
+
+  a {
+    color: #FFF;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+a.policy {
+  color: #C4C4C4;
+  margin-top: 10px;
+  display: block;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: -20px;
+  align-items: center;
+}
+
+.navItem {
+  font-size: 14px;
+  line-height: 17px;
+  color: #FFF;
+  text-transform: uppercase;
+  margin: 20px;
+  text-decoration: none;
+  font-weight: bold;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.phone {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  svg {
+    margin-right: 10px;
+  }
+}
+
+.phoneLink {
+  font-size: 24px;
+  line-height: 34px;
+  color: #FFF;
+  text-decoration: none;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.mail {
+  display: block;
+  font-size: 18px;
+  line-height: 21px;
+  color: #FFF;
+  margin-top: 15px;
+  margin-left: 45px;
+  
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.be:hover {
+  svg path {
+    fill: #4e00f7;
+  }
+}

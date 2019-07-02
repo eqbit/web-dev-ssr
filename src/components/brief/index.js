@@ -1,7 +1,10 @@
 import css from './style.scss';
-import {TextRadioInput as Radio} from '../TextRadioInput';
+import {TextRadioInput as Radio} from '../text-radio-input';
 import TextareaAutosize from 'react-autosize-textarea';
-import FileInput from '../FileInput';
+import FileInput from '../file-input';
+import TextInput from '../text-input';
+import {ButtonDefault} from '../styled';
+import Link from '../../hoc/active-link';
 
 class Brief extends React.PureComponent {
   constructor() {
@@ -30,7 +33,7 @@ class Brief extends React.PureComponent {
         <div className={css.row}>
           <div className={css.title}>Тип проекта</div>
           
-          <div>
+          <div className={css.radioRow}>
             <Radio name='type' onChange={this.setData}>Корпоративный сайт</Radio>
             <Radio name='type' onChange={this.setData}>Интернет-магазин</Radio>
             <Radio name='type' onChange={this.setData}>Лендинг</Radio>
@@ -42,7 +45,7 @@ class Brief extends React.PureComponent {
         <div className={css.row}>
           <div className={css.title}>Бюджет</div>
     
-          <div>
+          <div className={css.radioRow}>
             <Radio name='budget' onChange={this.setData}>25 - 50 тысяч рублей</Radio>
             <Radio name='budget' onChange={this.setData}>50 - 100 тысяч рублей</Radio>
             <Radio name='budget' onChange={this.setData}>Свыше 100 тысяч рублей</Radio>
@@ -73,7 +76,7 @@ class Brief extends React.PureComponent {
         <div className={css.row}>
           <div className={css.title}>Откуда вы узнали о нас?</div>
     
-          <div>
+          <div className={css.radioRow}>
             <Radio name='from' onChange={this.setData}>Рекомендации</Radio>
             <Radio name='from' onChange={this.setData}>Соц. сети</Radio>
             <Radio name='from' onChange={this.setData}>Другое</Radio>
@@ -83,8 +86,28 @@ class Brief extends React.PureComponent {
         <div className={css.row}>
           <div className={css.title}>Контактные данные</div>
     
-          <div>
-            
+          <div className={css.textInputRow}>
+            <TextInput
+              name='name'
+              placeholder='Имя'
+              required
+              onChange={this.setData}
+              img='/static/img/user.png'/>
+  
+            <TextInput
+              name='phone'
+              placeholder='Телефон'
+              required
+              onChange={this.setData}
+              img='/static/img/phone.png'/>
+          </div>
+        </div>
+        
+        <div className={css.submitRow}>
+          <ButtonDefault>Отправить</ButtonDefault>
+          <div className={css.submitRowPolicy}>
+            Нажимая на кнопку, вы даете согласие с <br/>
+            <a target='_blank' href='/policy' className={css.link}>политикой конфиденциальности</a>
           </div>
         </div>
       </>

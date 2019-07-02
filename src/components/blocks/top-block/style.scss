@@ -1,0 +1,58 @@
+.topBlock {
+  position: relative;
+  padding: 140px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.topBlockBg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  z-index: -1;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(78, 0, 247, 0.55) 0%, rgba(0, 0, 0, 0.55) 100%), rgba(0, 0, 0, 0.6);
+  }
+}
+
+.topBlockBgImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.topBlockTitle {
+  font-size: 64px;
+  line-height: 102px;
+  text-transform: uppercase;
+}
+
+.topBlockSubTitle {
+  font-size: 36px;
+  line-height: 50px;
+  margin-top: 30px;
+}
+
+.topBlockButtons {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  margin: 140px -20px 0;
+}
+
+.topBlockButtonsItem {
+  margin: 20px;
+}

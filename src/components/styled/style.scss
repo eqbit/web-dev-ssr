@@ -1,0 +1,136 @@
+@import '../../scss/colors';
+@import '../../scss/mixins';
+
+
+.container {
+  width: 1430px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.largeContainer {
+  width: 1920px;
+  max-width: 100%;
+
+  @include mq(1023px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.pageTitle {
+  font-size: 72px;
+  line-height: 102px;
+  color: #333;
+  margin-top: 60px;
+
+  @include mq(1023px) {
+    font-size: 32px;
+    line-height: normal;
+    margin-top: 50px;
+  }
+
+  @include mq(767px) {
+    font-size: 20px;
+    margin-top: 40px;
+  }
+}
+
+.blockTitle {
+  font-size: 48px;
+  line-height: 68px;
+  color: #262526;
+  margin-top: 100px;
+
+  @include mq(1023px) {
+    font-size: 28px;
+    line-height: normal;
+    margin-top: 50px;
+  }
+
+  @include mq(767px) {
+    font-size: 20px;
+    margin-top: 40px;
+  }
+
+  b {
+    color: $primary;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    width: 128px;
+    height: 5px;
+    margin-top: 15px;
+    background: $primary;
+  }
+}
+
+.pageText {
+  font-size: 18px;
+  line-height: 26px;
+  color: #333333;
+
+  @include mq(767px) {
+    font-size: 16px;
+    line-height: normal;
+  }
+}
+
+.btn {
+  border-radius: 100px;
+  text-align: center;
+  padding: 15px 20px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  transition: .3s;
+  cursor: pointer;
+  border: 2px solid;
+  display: inline-block;
+  min-width: 220px;
+}
+
+.btnDefault {
+  @extend .btn;
+
+  background: $primary;
+  color: #FFF;
+  border-color: $primary;
+
+  &:hover {
+    background: $secondary;
+    border-color: $secondary;
+  }
+}
+
+.btnSecondary {
+  @extend .btn;
+
+  background: #FFF;
+  color: #333;
+  border-color: $primary;
+
+  &:hover {
+    background: $secondary;
+    color: #FFF;
+    border-color: $secondary;
+  }
+}
+
+.btnTransparent {
+  @extend .btn;
+
+  background: transparent;
+  color: #FFF;
+  border-color: #FFF;
+
+  &:hover {
+    background: #FFF;
+    color: #333;
+  }
+}
