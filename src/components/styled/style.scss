@@ -70,6 +70,32 @@
   }
 }
 
+.pageSmallTitle {
+  font-size: 28px;
+  line-height: normal;
+  color: #262526;
+  margin-top: 60px;
+
+  @include mq(1023px) {
+    font-size: 24px;
+    margin-top: 50px;
+  }
+
+  @include mq(767px) {
+    font-size: 20px;
+    margin-top: 40px;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    width: 128px;
+    height: 5px;
+    margin-top: 15px;
+    background: $primary;
+  }
+}
+
 .pageText {
   font-size: 18px;
   line-height: 26px;
