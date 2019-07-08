@@ -2,9 +2,8 @@ import css from './style.scss';
 import {TextRadioInput as Radio} from '../text-radio-input';
 import TextareaAutosize from 'react-autosize-textarea';
 import FileInput from '../file-input';
-import TextInput from '../text-input';
+import {TextInput} from '../text-input';
 import {ButtonDefault} from '../styled';
-import Link from '../../hoc/active-link';
 
 class Brief extends React.PureComponent {
   constructor() {
@@ -46,10 +45,10 @@ class Brief extends React.PureComponent {
           <div className={css.title}>Бюджет</div>
     
           <div className={css.radioRow}>
+            <Radio name='budget' onChange={this.setData}>До 25 тысяч рублей</Radio>
             <Radio name='budget' onChange={this.setData}>25 - 50 тысяч рублей</Radio>
             <Radio name='budget' onChange={this.setData}>50 - 100 тысяч рублей</Radio>
             <Radio name='budget' onChange={this.setData}>Свыше 100 тысяч рублей</Radio>
-            <Radio name='budget' onChange={this.setData}>Другое</Radio>
           </div>
         </div>
   
@@ -57,7 +56,12 @@ class Brief extends React.PureComponent {
           <div className={css.title}>Задача</div>
     
           <div>
-            <TextareaAutosize name='task' className={css.area} onChange={this.setData}/>
+            <TextareaAutosize
+              name='task'
+              className={css.area}
+              onChange={this.setData}
+              placeholder='Расскажите подробнее о проекте'
+            />
           </div>
         </div>
         

@@ -1,13 +1,22 @@
 import Layout from '../src/hoc/layout';
-import {Container, PageTitle, Article} from '../src/components/styled'
-import {Brief} from '../src/components/brief'
+import {Container, PageTitle, Article} from '../src/components/styled';
+import {Brief} from '../src/components/brief';
+import { withRouter } from 'next/router';
 
-export default () => (
+const page = () => (
   <>
     <style jsx>{`
       .link {
         color: #4E00F7;
         text-decoration: none;
+      }
+      
+      @media (max-width: 1023px) {
+        .link {
+          display: block;
+          font-size: 20px;
+          margin-top: 10px;
+        }
       }
     `}</style>
     
@@ -24,3 +33,5 @@ export default () => (
     </Layout>
   </>
 );
+
+export default withRouter(page);

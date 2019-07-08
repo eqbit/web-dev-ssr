@@ -15,9 +15,25 @@ html {
   justify-content: space-between;
 }
 
+.logo {
+  @include mq(1199px) {
+    width: 160px;
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
 .menu {
   display: flex;
   align-items: center;
+
+  @include mq(1023px) {
+    display: none;
+  }
 }
 
 .menuItem {
@@ -29,17 +45,29 @@ html {
 
   & + & {
     margin-left: 35px;
+
+    @include mq(1199px) {
+      margin-left: 15px;
+    }
   }
 }
 
 .be {
   display: flex;
   align-items: center;
+
+  @include mq(1023px) {
+    display: none;
+  }
 }
 
 .phone {
   display: flex;
   align-items: center;
+
+  @include mq(1023px) {
+    display: none;
+  }
 }
 
 .phoneLink {
@@ -50,5 +78,42 @@ html {
 
   &:hover {
     color: $primary;
+  }
+}
+
+.boardToggle {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+
+  @include mq(1024px, min) {
+    display: none;
+  }
+
+  svg {
+    overflow: visible;
+    rect {
+      transform-origin: center;
+      transition: .3s;
+    }
+  }
+
+  &Open {
+    svg {
+      rect {
+        y: 8;
+
+        &:nth-child(1),
+        &:nth-child(2) {
+          transform: rotate(45deg);
+        }
+
+        &:nth-child(3),
+        &:nth-child(4) {
+          transform: rotate(-45deg);
+        }
+      }
+    }
   }
 }

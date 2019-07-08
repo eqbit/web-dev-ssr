@@ -67,6 +67,8 @@
 
   @include mq(767px) {
     margin-top: 30px;
+    grid-template-columns: 100%;
+    grid-gap: 20px;
   }
 }
 
@@ -74,6 +76,10 @@
   font-size: 18px;
   line-height: 26px;
   color: #333;
+
+  @include mq(767px) {
+    font-size: 14px;
+  }
 }
 
 .link {

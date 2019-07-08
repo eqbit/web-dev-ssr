@@ -9,6 +9,11 @@
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
+
+  @include mq(1199px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 .largeContainer {
@@ -46,13 +51,13 @@
   margin-top: 100px;
 
   @include mq(1023px) {
-    font-size: 28px;
+    font-size: 32px;
     line-height: normal;
     margin-top: 50px;
   }
 
   @include mq(767px) {
-    font-size: 20px;
+    font-size: 28px;
     margin-top: 40px;
   }
 

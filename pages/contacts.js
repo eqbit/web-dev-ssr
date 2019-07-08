@@ -1,8 +1,9 @@
 import Layout from '../src/hoc/layout';
 import Link from '../src/hoc/active-link';
 import {Container, PageTitle, ButtonDefault, ButtonSecondary} from '../src/components/styled';
+import { withRouter } from 'next/router';
 
-export default () => (
+const page = () => (
   <>
     <style jsx>{`
       .hr {
@@ -89,3 +90,5 @@ export default () => (
     </Layout>
   </>
 );
+
+export default withRouter(page);

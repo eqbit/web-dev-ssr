@@ -1,8 +1,23 @@
+@import '../../../scss/mixins';
+@import '../../../scss/colors';
+
 .topBlock {
   position: relative;
   padding: 140px;
   text-align: center;
   color: #FFFFFF;
+
+  @include mq(1199px) {
+    padding: 80px 0;
+  }
+
+  @include mq(1023px) {
+    padding: 60px 0;
+  }
+
+  @include mq(767px) {
+    padding: 40px 0;
+  }
 }
 
 .topBlockBg {
@@ -38,12 +53,31 @@
   font-size: 64px;
   line-height: 102px;
   text-transform: uppercase;
+
+  @include mq(1023px) {
+    font-size: 40px;
+    line-height: normal;
+  }
+
+  @include mq(767px) {
+    font-size: 30px;
+  }
 }
 
 .topBlockSubTitle {
   font-size: 36px;
   line-height: 50px;
   margin-top: 30px;
+
+  @include mq(1023px) {
+    font-size: 26px;
+    line-height: normal;
+    margin-top: 20px;
+  }
+
+  @include mq(767px) {
+    font-size: 20px;
+  }
 }
 
 .topBlockButtons {
@@ -51,6 +85,11 @@
   align-self: center;
   justify-content: center;
   margin: 140px -20px 0;
+
+  @include mq(767px) {
+    margin-top: 40px;
+    flex-direction: column;
+  }
 }
 
 .topBlockButtonsItem {

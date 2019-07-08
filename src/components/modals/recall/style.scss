@@ -1,0 +1,65 @@
+@import "../../../scss/mixins";
+
+.popup {
+  padding: 60px;
+  box-shadow: 0 0 15px rgba(#000, .5);
+  position: fixed;
+  width: 455px;
+  max-width: 100%;
+  z-index: 3;
+  top: 20vh;
+  left: calc(50% - 227px);
+  background: #FFF;
+
+  @include mq(1023px) {
+    padding: 30px;
+  }
+
+  &Close {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  
+  &Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(#000, .5);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    cursor: pointer;
+  }
+  
+  &Title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  &Inputs {
+    display: grid;
+    grid-gap: 20px;
+    margin-top: 30px;
+  }
+
+  &Submit {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+  }
+
+  &Agreement {
+    margin-top: 20px;
+
+    a {
+      display: block;
+      text-decoration: none;
+    }
+  }
+}

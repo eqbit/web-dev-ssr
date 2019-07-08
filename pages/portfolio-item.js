@@ -2,8 +2,9 @@ import Layout from '../src/hoc/layout';
 import {Container, BlockSmallTitle, Article} from '../src/components/styled';
 import axios from 'axios';
 import {routes} from '../src/api/routes';
+import {withRouter} from 'next/router';
 
-export default class extends React.PureComponent {
+class page extends React.PureComponent {
   constructor() {
     super();
     this.state = {};
@@ -30,3 +31,5 @@ export default class extends React.PureComponent {
     );
   }
 }
+
+export default withRouter(page);

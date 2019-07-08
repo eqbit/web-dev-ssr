@@ -1,9 +1,20 @@
+@import "../../../scss/mixins";
+
 .tiles {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 100%;
   overflow: hidden;
   margin-top: 60px;
+
+  @include mq(1023px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include mq(767px) {
+    grid-template-columns: 100%;
+    grid-gap: 5px;
+  }
 }
 
 .tileLink {
@@ -16,12 +27,25 @@
   color: #FFF;
   height: 400px;
   cursor: pointer;
+
+  @include mq(1199px) {
+    height: 300px;
+  }
+
+  @include mq(767px) {
+    height: auto;
+    min-height: 200px;
+  }
 }
 
 .tileType {
   font-size: 14px;
   line-height: 140.62%;
   text-transform: uppercase;
+
+  @include mq(767px) {
+    font-size: 12px;
+  }
 }
 
 .tileTitle {
@@ -29,6 +53,10 @@
   font-size: 24px;
   line-height: 140.62%;
   margin-top: 20px;
+
+  @include mq(767px) {
+    font-size: 20px;
+  }
 }
 
 .tileBg {

@@ -1,6 +1,6 @@
 import css from './style.scss';
 
-export default props => (
+const TextInput = props => (
   <div className={css.inputContainer}>
     <input
       type="text"
@@ -13,3 +13,5 @@ export default props => (
     <img className={css.img} src={props.img} alt=""/>
   </div>
 );
+
+export {TextInput}

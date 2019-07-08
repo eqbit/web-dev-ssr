@@ -1,7 +1,8 @@
 import Layout from '../src/hoc/layout';
-import {Container, PageTitle, Article} from '../src/components/styled'
+import {Container, PageTitle, Article} from '../src/components/styled';
+import { withRouter } from 'next/router';
 
-export default () => (
+const page = () => (
   <>
     <Layout>
       <Container>
@@ -10,3 +11,5 @@ export default () => (
     </Layout>
   </>
 );
+
+export default withRouter(page);
