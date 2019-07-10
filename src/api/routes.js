@@ -3,7 +3,7 @@ const routes = {
   posts: 'https://wp.web-dev-studio.ru/wp-json/sections/v1/post',
   portfolio: 'https://wp.web-dev-studio.ru/wp-json/portfolio/v1/post',
   portfolioSingle : 'https://wp.web-dev-studio.ru/wp-json/portfolio/v1/post?slug=',
-  formHandle: 'https://wp.web-dev-studio.ru/api/forms/submit_form/'
+  formHandle: 'https://wp.web-dev-studio.ru/api/forms/submit_form/?dev'
 };
 
 export {routes}
