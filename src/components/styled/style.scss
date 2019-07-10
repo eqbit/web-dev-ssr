@@ -105,6 +105,11 @@
   font-size: 18px;
   line-height: 26px;
   color: #333333;
+  margin-top: 20px;
+
+  @include mq(1023px) {
+    margin-top: 15px;
+  }
 
   @include mq(767px) {
     font-size: 16px;
@@ -124,6 +129,10 @@
   border: 2px solid;
   display: inline-block;
   min-width: 220px;
+
+  @include mq(767px) {
+    width: 100%;
+  }
 }
 
 .btnDefault {

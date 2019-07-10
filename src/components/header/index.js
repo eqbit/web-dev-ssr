@@ -17,7 +17,6 @@ class Header extends React.PureComponent {
   }
   
   handleBoard = e => {
-    console.log(e);
     this.setState(prevState => ({
       boardOpen: !prevState.boardOpen
     }));

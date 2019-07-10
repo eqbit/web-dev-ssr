@@ -4,10 +4,6 @@ const nav = [
     path: '/'
   },
   {
-    name: 'Отзывы',
-    path: '/feedback'
-  },
-  {
     name: 'О компании',
     path: '/about'
   },

@@ -1,4 +1,5 @@
 @import "../../../scss/mixins";
+@import "../../../scss/colors";
 
 .popup {
   padding: 60px;
@@ -10,9 +11,21 @@
   top: 20vh;
   left: calc(50% - 227px);
   background: #FFF;
+  transition: .3s;
+
+  &Closing {
+    opacity: 0;
+  }
 
   @include mq(1023px) {
     padding: 30px;
+  }
+
+  @include mq(767px) {
+    width: 90%;
+    left: 5%;
+    top: 5vh;
+    padding: 20px;
   }
 
   &Close {
@@ -20,6 +33,11 @@
     position: absolute;
     right: 10px;
     top: 10px;
+
+    @include mq(767px) {
+      top: 5px;
+      right: 5px;
+    }
   }
   
   &Overlay {
@@ -31,6 +49,11 @@
     height: 100%;
     z-index: 2;
     cursor: pointer;
+    transition: .3s;
+
+    &Closing {
+      opacity: 0;
+    }
   }
   
   &Title {
@@ -60,6 +83,17 @@
     a {
       display: block;
       text-decoration: none;
+    }
+  }
+
+  &Success {
+    &Title {
+      font-size: 20px;
+      font-weight: bold;
+      padding-bottom: 15px;
+      border-bottom: 2px solid $primary;
+      margin-bottom: 15px;
+      margin-top: 15px;
     }
   }
 }

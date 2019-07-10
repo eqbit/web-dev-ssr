@@ -1,5 +1,10 @@
-import {withRouter} from 'next/router';
+import Layout from '../src/hoc/layout';
+import {PortfolioTiles} from '../src/components/blocks/portfolio-tiles';
 
-const page = () => <div>catalog page</div>
-
-export default withRouter(page);
+export default () => (
+  <>
+    <Layout>
+      <PortfolioTiles/>
+    </Layout>
+  </>
+)
