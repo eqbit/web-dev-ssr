@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "node index.js",
     "build": "next build",
-    "start": "NODE_ENV=production node index.js"
+    "start": "NODE_ENV=production node index.js",
+    "deploy": "yarn install && yarn build && pm2 reload 0"
   },
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",

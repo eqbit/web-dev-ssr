@@ -13,6 +13,10 @@
   transform: translateX(-100%);
   transition: .3s;
 
+  @include mq(1024px, min) {
+    display: none;
+  }
+
   &Open {
     transform: translateX(0);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);

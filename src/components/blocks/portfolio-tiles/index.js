@@ -69,7 +69,7 @@ class PortfolioTiles extends React.PureComponent {
           <LargeContainer>
             <div className={css.tiles}>
               {posts.map((item, index) => (
-                <Link key={index} prefetch href={`/portfolio/${item.slug}`}>
+                <Link key={index} href={`/portfolio/${item.slug}`}>
                   <a className={css.tileLink}>
                     <div className={css.tile}>
                       <div className={css.tileType}>{item.type}</div>
