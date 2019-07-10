@@ -12,6 +12,10 @@
   font-size: 18px;
   outline: 2px rgb(166, 166, 166);
 
+  &Invalid {
+    border-color: #e40000;
+  }
+
   @include mq(1024px, min) {
     outline: none;
   }

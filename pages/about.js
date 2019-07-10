@@ -3,6 +3,7 @@ import {Container, PageTitle, Article} from '../src/components/styled';
 import { withRouter } from 'next/router';
 import {Conditions} from '../src/components/blocks/conditions';
 import {Kpi} from '../src/components/blocks/kpi';
+import {CallSimplified} from '../src/components/blocks/call-simplified';
 
 
 const page = () => (
@@ -16,6 +17,7 @@ const page = () => (
       </Container>
       <Conditions/>
       <Kpi title='Наш подход к работе'/>
+      <CallSimplified/>
     </Layout>
   </>
 );

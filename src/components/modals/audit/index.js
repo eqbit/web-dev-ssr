@@ -9,7 +9,8 @@ const inputs = [
   {
     name: 'phone',
     placeholder: 'Телефон',
-    required: true
+    required: true,
+    inputmask: '+7(999)999-99-99'
   },
   {
     name: 'email',

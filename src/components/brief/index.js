@@ -4,6 +4,7 @@ import TextareaAutosize from 'react-autosize-textarea';
 import FileInput from '../file-input';
 import {TextInput} from '../text-input';
 import {ButtonDefault} from '../styled';
+import {validateName, validatePhone} from '../../api/input-validators';
 
 class Brief extends React.PureComponent {
   constructor() {
@@ -26,7 +27,16 @@ class Brief extends React.PureComponent {
     });
   };
   
+  handleSubmit = () => {
+    this.setState({
+      submitted: true
+    })
+  };
+  
   render() {
+    
+    const {name, phone} = this.state;
+    
     return (
       <>
         <div className={css.row}>
@@ -96,6 +106,7 @@ class Brief extends React.PureComponent {
               placeholder='Имя'
               required
               onChange={this.setData}
+              invalid={this.state.submitted && !validateName(name)}
               img='/static/img/user.png'/>
   
             <TextInput
@@ -103,12 +114,14 @@ class Brief extends React.PureComponent {
               placeholder='Телефон'
               required
               onChange={this.setData}
+              invalid={this.state.submitted && !validatePhone(phone)}
+              inputmask='+7(999)999-99-99'
               img='/static/img/phone.png'/>
           </div>
         </div>
         
         <div className={css.submitRow}>
-          <ButtonDefault>Отправить</ButtonDefault>
+          <ButtonDefault onClick={this.handleSubmit}>Отправить</ButtonDefault>
           <div className={css.submitRowPolicy}>
             Нажимая на кнопку, вы даете согласие с <br/>
             <a target='_blank' href='/policy' className={css.link}>политикой конфиденциальности</a>

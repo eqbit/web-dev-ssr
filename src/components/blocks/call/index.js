@@ -17,7 +17,6 @@ class Call extends React.Component {
   };
   
   handlePopupOpen = name => {
-    console.log(name)
     this.setState(prevState => {
       prevState.modals[name] = true;
       return prevState;

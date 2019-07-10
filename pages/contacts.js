@@ -1,7 +1,7 @@
 import Layout from '../src/hoc/layout';
-import Link from '../src/hoc/active-link';
-import {Container, PageTitle, ButtonDefault, ButtonSecondary} from '../src/components/styled';
+import {Container, PageTitle} from '../src/components/styled';
 import { withRouter } from 'next/router';
+import {CallSimplified} from '../src/components/blocks/call-simplified';
 
 const page = () => (
   <>
@@ -77,16 +77,8 @@ const page = () => (
             <a className="contacts-link" href="mailto:web.d3v@yandex.ru">web.d3v@yandex.ru</a>
           </div>
         </div>
-        
-        <div className="buttons">
-          <ButtonDefault>Связаться</ButtonDefault>
-          <Link prefetch href='/brief'>
-            <a>
-              <ButtonSecondary style={{width: '100%'}}>Заполнить бриф</ButtonSecondary>
-            </a>
-          </Link>
-        </div>
       </Container>
+      <CallSimplified />
     </Layout>
   </>
 );

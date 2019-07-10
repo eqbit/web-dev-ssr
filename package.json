@@ -21,7 +21,8 @@
     "react-autosize-textarea": "^7.0.0",
     "react-dom": "^16.8.6",
     "react-fancybox": "^0.2.5",
-    "react-height-matching-group": "^1.0.8"
+    "react-height-matching-group": "^1.0.8",
+    "react-input-mask": "^2.0.4"
   },
   "devDependencies": {
     "react": "^16.8.6"

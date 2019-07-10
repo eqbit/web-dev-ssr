@@ -38,7 +38,6 @@ class Modal extends React.Component {
   handleClose = () => {
     this.setState(prevState => {
       prevState.closing = true;
-      console.log(prevState)
       return prevState;
     });
     
@@ -78,6 +77,7 @@ class Modal extends React.Component {
                     name={item.name}
                     placeholder={item.placeholder}
                     required={item.required}
+                    inputmask={item.inputmask || null}
                     onChange={this.setData}/>
                 ))}
     

@@ -1,17 +1,28 @@
 import css from './style.scss';
+import classNames from 'classnames';
+import InputMask from 'react-input-mask';
 
-const TextInput = props => (
-  <div className={css.inputContainer}>
-    <input
-      type="text"
-      className={css.textInput}
-      name={props.name}
-      onChange={props.onChange}
-      placeholder={props.placeholder}
-      required={props.required}
-    />
-    <img className={css.img} src={props.img} alt=""/>
-  </div>
-);
+class TextInput extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  
+  render() {
+    return (
+      <div className={css.inputContainer}>
+        <InputMask
+          type="text"
+          className={classNames(css.textInput, this.props.invalid && css.textInputInvalid)}
+          name={this.props.name}
+          onChange={this.props.onChange}
+          placeholder={this.props.placeholder}
+          required={this.props.required}
+          mask={this.props.inputmask || null}
+        />
+        <img className={css.img} src={this.props.img} alt=""/>
+      </div>
+    );
+  }
+}
 
 export {TextInput}
