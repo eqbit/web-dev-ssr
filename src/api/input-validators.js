@@ -9,7 +9,7 @@ const validateName = name => {
 const validatePhone = phone => {
   if (phone) {
     let letters = /^[^a-zA-Z]+$/;
-    console.log(letters.test(phone))
+    
     if(letters.test(phone)) {
       return phone.replace(/\D/g, '').length > 10
     }

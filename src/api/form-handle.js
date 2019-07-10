@@ -15,4 +15,16 @@ const CallHandle = async (method, title, state) => {
   return res.data.status === 'ok';
 };
 
-export {CallHandle};
+const BriefHandle = async data => {
+  const config = {
+    headers: {
+      'content-type': 'multipart/form-data'
+    }
+  };
+  
+  let res = await axios.post(routes.formHandle + '&method=submit_brief', data, config);
+  
+  return res.data.status === 'ok';
+};
+
+export {CallHandle, BriefHandle};

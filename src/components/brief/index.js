@@ -3,8 +3,9 @@ import {TextRadioInput as Radio} from '../text-radio-input';
 import TextareaAutosize from 'react-autosize-textarea';
 import FileInput from '../file-input';
 import {TextInput} from '../text-input';
-import {ButtonDefault} from '../styled';
+import {Submit} from '../styled';
 import {validateName, validatePhone} from '../../api/input-validators';
+import {BriefHandle} from '../../api/form-handle';
 
 class Brief extends React.PureComponent {
   constructor() {
@@ -27,10 +28,22 @@ class Brief extends React.PureComponent {
     });
   };
   
-  handleSubmit = () => {
+  handleSubmit = async e => {
+    e.preventDefault();
+    
     this.setState({
       submitted: true
-    })
+    });
+    
+    let data = new FormData;
+    
+    for(let key in this.state) {
+      data.append(key, this.state[key])
+    }
+    
+    let success = await BriefHandle(data);
+    
+    if(success) console.log('success');
   };
   
   render() {
@@ -38,7 +51,7 @@ class Brief extends React.PureComponent {
     const {name, phone} = this.state;
     
     return (
-      <>
+      <form onSubmit={this.handleSubmit}>
         <div className={css.row}>
           <div className={css.title}>Тип проекта</div>
           
@@ -121,13 +134,13 @@ class Brief extends React.PureComponent {
         </div>
         
         <div className={css.submitRow}>
-          <ButtonDefault onClick={this.handleSubmit}>Отправить</ButtonDefault>
+          <Submit buttonClass='Default'>Отправить</Submit>
           <div className={css.submitRowPolicy}>
             Нажимая на кнопку, вы даете согласие с <br/>
             <a target='_blank' href='/policy' className={css.link}>политикой конфиденциальности</a>
           </div>
         </div>
-      </>
+      </form>
     )
   }
 }
