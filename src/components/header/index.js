@@ -26,6 +26,7 @@ class Header extends React.PureComponent {
     return (
       <>
         <Head>
+          <meta name="yandex-verification" content="dd592ce767b93120" />
           <title>WebDev. Разработка и техническая поддежка сайтов</title>
           <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,400i,700&display=swap" rel="stylesheet"/>
           <link rel="shortcut icon" type="image/x-icon" href="/static/img/favicon.ico"/>

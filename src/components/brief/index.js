@@ -43,7 +43,11 @@ class Brief extends React.PureComponent {
     
     let success = await BriefHandle(data);
     
-    if(success) console.log('success');
+    if(success) {
+      this.setState({
+        success: true
+      })
+    }
   };
   
   render() {
@@ -134,7 +138,11 @@ class Brief extends React.PureComponent {
         </div>
         
         <div className={css.submitRow}>
-          <Submit buttonClass='Default'>Отправить</Submit>
+          <Submit buttonClass='Default'
+                  disabled={this.state.success}
+          >
+            Отправить
+          </Submit>
           <div className={css.submitRowPolicy}>
             Нажимая на кнопку, вы даете согласие с <br/>
             <a target='_blank' href='/policy' className={css.link}>политикой конфиденциальности</a>

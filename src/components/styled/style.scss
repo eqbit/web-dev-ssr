@@ -174,3 +174,11 @@
     color: #333;
   }
 }
+
+.btnDisabled, .btnDisabled:hover,
+.btnDisabled:active, .btnDisabled:focus {
+  background: #ababab;
+  color: #333;
+  cursor: not-allowed;
+  border-color: #ababab;
+}

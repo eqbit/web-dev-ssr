@@ -1,4 +1,5 @@
 import css from './style.scss';
+import classNames from 'classnames';
 
 const Container = props => <div className={css.container}>{props.children}</div>;
 const LargeContainer = props => <div className={css.largeContainer}>{props.children}</div>;
@@ -10,7 +11,15 @@ const ButtonDefault = props => <div className={css.btnDefault} {...props}>{props
 const ButtonDefaultFull = props => <div className={css.btnDefault} style={{width: '100%'}} {...props}>{props.children}</div>;
 const ButtonSecondary = props => <div className={css.btnSecondary} {...props}>{props.children}</div>;
 const ButtonTransparent = props => <div className={css.btnTransparent} {...props}>{props.children}</div>;
-const Submit = props => <button type='submit' className={css['btn' + props.buttonClass]}>{props.children}</button>
+
+const Submit = props => (
+  <button type='submit'
+          className={classNames(css['btn' + props.buttonClass], props.disabled && css.btnDisabled)}
+          disabled={props.disabled}
+  >
+    {props.children}
+    </button>
+)
 
 export {
   Container,
