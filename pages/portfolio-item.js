@@ -20,7 +20,12 @@ class page extends React.PureComponent {
   
   render() {
     return (
-      <Layout>
+      <Layout data={
+        {
+          title: this.props.post.post_title,
+          description: 'none yet'
+        }
+      }>
         <Container>
           <BlockSmallTitle>{this.props.post.post_title}</BlockSmallTitle>
           <Article>

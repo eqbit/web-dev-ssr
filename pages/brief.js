@@ -3,6 +3,11 @@ import {Container, PageTitle, Article} from '../src/components/styled';
 import {Brief} from '../src/components/brief';
 import { withRouter } from 'next/router';
 
+const data = {
+  title: 'Бриф.',
+  description: `Форма заказа разработки сайта`
+};
+
 const page = () => (
   <>
     <style jsx>{`
@@ -20,7 +25,7 @@ const page = () => (
       }
     `}</style>
     
-    <Layout>
+    <Layout data={data}>
       <Container>
         <PageTitle>Заполните бриф</PageTitle>
         <Article>

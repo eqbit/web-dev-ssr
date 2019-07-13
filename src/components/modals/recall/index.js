@@ -1,16 +1,19 @@
 import {Modal} from '../modal';
+import {validateName, validatePhone} from '../../../api/input-validators';
 
 const inputs = [
   {
     name: 'name',
-    placeholder: 'Имя',
-    required: true
+    placeholder: 'Имя*',
+    required: true,
+    validate: validateName
   },
   {
     name: 'phone',
-    placeholder: 'Телефон',
+    placeholder: 'Телефон*',
     required: true,
-    inputmask: '+7(999)999-99-99'
+    inputmask: '+7(999)999-99-99',
+    validate: validatePhone
   }
 ]
 

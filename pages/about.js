@@ -5,10 +5,14 @@ import {Conditions} from '../src/components/blocks/conditions';
 import {Kpi} from '../src/components/blocks/kpi';
 import {CallSimplified} from '../src/components/blocks/call-simplified';
 
+const data = {
+  title: '',
+  description: `Информация о компании Web/Dev`
+};
 
 const page = () => (
   <>
-    <Layout>
+    <Layout data={data}>
       <Container>
         <PageTitle>О компании</PageTitle>
         <Article>

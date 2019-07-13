@@ -10,6 +10,11 @@ class Modal extends React.Component {
     super(props);
     
     this.state = {}
+    this.timeout = null;
+  }
+  
+  componentWillUnmount() {
+    this.timeout = null;
   }
   
   setData = e => {
@@ -19,19 +24,34 @@ class Modal extends React.Component {
     });
   };
   
-  submitHandle = async () => {
-    const success = await CallHandle('submit_recall', this.props.title, this.state);
+  handleSubmit = async () => {
+    this.setState({
+      submitted: true
+    });
     
-    if(success) {
-      this.setState(() => {
-        return {
-          success: true
-        }
-      });
+    let valid = this.props.inputs.every(item => {
+      if(item.validate) {
+        return item.validate(this.state[item.name])
+      }
       
-      setTimeout(() => {
-        this.handleClose();
-      }, 3000)
+      return true;
+    });
+    
+    if(valid) {
+      console.log(valid);
+      const success = await CallHandle('submit_recall', this.props.title, this.state);
+  
+      if(success) {
+        this.setState(() => {
+          return {
+            success: true
+          }
+        });
+  
+        this.timeout = setTimeout(() => {
+          this.handleClose();
+        }, 3000);
+      }
     }
   };
   
@@ -40,8 +60,8 @@ class Modal extends React.Component {
       prevState.closing = true;
       return prevState;
     });
-    
-    setTimeout(() => {
+  
+    this.timeout = setTimeout(() => {
       this.props.handleClose();
     }, 300)
   };
@@ -49,7 +69,8 @@ class Modal extends React.Component {
   render() {
     return (
       <>
-        <div className={classNames(css.popupOverlay, this.state.closing && css.popupOverlayClosing)} onClick={this.handleClose} />
+        <div className={classNames(css.popupOverlay, this.state.closing && css.popupOverlayClosing)}
+             onClick={this.handleClose} />
         
         <div className={classNames(css.popup, this.state.closing && css.popupClosing)}>
           <div className={css.popupClose} onClick={this.handleClose}>
@@ -78,11 +99,15 @@ class Modal extends React.Component {
                     placeholder={item.placeholder}
                     required={item.required}
                     inputmask={item.inputmask || null}
+                    invalid={
+                      this.state.submitted &&
+                      item.validate ? !item.validate(this.state[item.name]) : false
+                    }
                     onChange={this.setData}/>
                 ))}
     
                 <div className={css.popupSubmit}>
-                  <ButtonDefaultFull onClick={this.submitHandle}>
+                  <ButtonDefaultFull onClick={this.handleSubmit}>
                     Отправить
                   </ButtonDefaultFull>
       

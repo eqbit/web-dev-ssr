@@ -3,6 +3,11 @@ import {Container, PageTitle} from '../src/components/styled';
 import { withRouter } from 'next/router';
 import {CallSimplified} from '../src/components/blocks/call-simplified';
 
+const data = {
+  title: 'Контакты.',
+  description: `Наши контакты`
+};
+
 const page = () => (
   <>
     <style jsx>{`
@@ -46,7 +51,7 @@ const page = () => (
       }
     `}</style>
     
-    <Layout>
+    <Layout data={data}>
       <Container>
         <PageTitle>Наши контакты</PageTitle>
         

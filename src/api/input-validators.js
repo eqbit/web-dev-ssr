@@ -18,4 +18,12 @@ const validatePhone = phone => {
   return false;
 };
 
-export {validateName, validatePhone};
+const validateSite = site => {
+  if (site) {
+    return site.length > 3;
+  }
+  
+  return false;
+};
+
+export {validateName, validatePhone, validateSite};

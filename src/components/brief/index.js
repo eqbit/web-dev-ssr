@@ -6,6 +6,7 @@ import {TextInput} from '../text-input';
 import {Submit} from '../styled';
 import {validateName, validatePhone} from '../../api/input-validators';
 import {BriefHandle} from '../../api/form-handle';
+import {SuccessMessage} from '../modals/success-message';
 
 class Brief extends React.PureComponent {
   constructor() {
@@ -28,26 +29,61 @@ class Brief extends React.PureComponent {
     });
   };
   
-  handleSubmit = async e => {
+  handleSubmit = e => {
     e.preventDefault();
     
     this.setState({
       submitted: true
     });
     
+    if(this.validate()) {
+      console.log('okay');
+      this.handleData();
+    } else {
+      console.log('nah')
+    }
+  };
+  
+  handleData = async () => {
     let data = new FormData;
-    
+  
     for(let key in this.state) {
       data.append(key, this.state[key])
     }
-    
+  
     let success = await BriefHandle(data);
-    
+  
     if(success) {
       this.setState({
         success: true
-      })
+      });
+  
+      setTimeout(() => {
+        this.setState({
+          successMessageClosing: true
+        });
+  
+        this.handleSuccessMessageClose();
+      }, 3000);
     }
+  };
+  
+  validate = () => {
+    const {name, phone} = this.state;
+    
+    return validateName(name) && validatePhone(phone);
+  };
+  
+  handleSuccessMessageClose = () => {
+    this.setState({
+      successMessageClosing: true
+    });
+    
+    setTimeout(() => {
+      this.setState({
+        successMessageClosed: true
+      });
+    }, 300)
   };
   
   render() {
@@ -120,7 +156,7 @@ class Brief extends React.PureComponent {
           <div className={css.textInputRow}>
             <TextInput
               name='name'
-              placeholder='Имя'
+              placeholder='Имя*'
               required
               onChange={this.setData}
               invalid={this.state.submitted && !validateName(name)}
@@ -128,7 +164,7 @@ class Brief extends React.PureComponent {
   
             <TextInput
               name='phone'
-              placeholder='Телефон'
+              placeholder='Телефон*'
               required
               onChange={this.setData}
               invalid={this.state.submitted && !validatePhone(phone)}
@@ -148,6 +184,11 @@ class Brief extends React.PureComponent {
             <a target='_blank' href='/policy' className={css.link}>политикой конфиденциальности</a>
           </div>
         </div>
+        
+        {
+          this.state.success && !this.state.successMessageClosed
+          && <SuccessMessage handleClose={this.handleSuccessMessageClose} closing={this.state.successMessageClosing}/>
+        }
       </form>
     )
   }

@@ -2,8 +2,13 @@ import {Container, Article} from '../src/components/styled';
 import Layout from '../src/hoc/layout'
 import {withRouter} from 'next/router';
 
+const data = {
+  title: 'Политика конфиденциальности.',
+  description: `Политика конфиденциальности`
+};
+
 const page = () => (
-  <Layout>
+  <Layout data={data}>
     <Container>
       <Article>
         <p>Предоставляя свои персональные данные Пользователь даёт согласие на обработку, хранение и использование своих

@@ -10,6 +10,7 @@ class TextInput extends React.Component {
   render() {
     return (
       <div className={css.inputContainer}>
+        {this.props.invalid && <div className={css.errorMessage}>Пожалуйста, проверьте корректность данных</div>}
         <InputMask
           type="text"
           className={classNames(css.textInput, this.props.invalid && css.textInputInvalid)}
