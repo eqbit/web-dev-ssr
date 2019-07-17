@@ -45,7 +45,7 @@ class PortfolioTiles extends React.PureComponent {
     return {
       img: post.acf['announce-img'].sizes.medium_large,
       title: post.post_title,
-      type: post.acf.type,
+      type: post.acf.badge,
       slug: post.post_name
     };
   };
