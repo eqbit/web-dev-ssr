@@ -17,8 +17,8 @@ const inputs = [
   },
   {
     name: 'email',
-    placeholder: 'E-mail',
-    required: false
+    placeholder: 'E-mail*',
+    required: true
   },
   {
     name: 'site',

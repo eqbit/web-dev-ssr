@@ -14,6 +14,11 @@ const inputs = [
     required: true,
     inputmask: '+7(999)999-99-99',
     validate: validatePhone
+  },
+  {
+    name: 'email',
+    placeholder: 'E-mail*',
+    required: true
   }
 ]
 
