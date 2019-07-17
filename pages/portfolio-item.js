@@ -15,7 +15,7 @@ class page extends React.PureComponent {
     this.state = {};
   }
   
-  static async getInitialProps( context ) {
+  static async getInitialProps(context) {
     
     const slug = context.query.slug;
     
@@ -49,35 +49,55 @@ class page extends React.PureComponent {
         <Container>
           <BlockSmallTitle>{this.props.post.post_title}</BlockSmallTitle>
           <Article>
-            {this.props.post.acf.description}
+            {
+              this.props.post.acf && this.props.post.acf.description
+                ? this.props.post.acf.description
+                : 'no data yet'
+            }
           </Article>
         </Container>
-  
+        
         {
           this.props.post.acf.type === 'redesign'
-            && this.props.post.acf['after-work']
-            && this.props.post.acf['before-work']
-            && <PortfolioSlider post={this.props.post} isMobile={this.props.isMobile}/>
+          && this.props.post.acf['after-work']
+          && this.props.post.acf['before-work']
+          && <PortfolioSlider post={this.props.post} isMobile={this.props.isMobile}/>
         }
         
         <Container>
-          <BlockSmallTitle>Подробно о кейсе</BlockSmallTitle>
-          <Article>
-            {this.props.post.acf['additional-info']}
-          </Article>
+          {
+            this.props.post.acf['additional-info'] &&
+            <>
+              <BlockSmallTitle>Подробно о кейсе</BlockSmallTitle>
+              <Article>
+                {this.props.post.acf['additional-info']}
+              </Article>
+            </>
+          }
+          {
+            this.props.post.acf['mobile-img'] &&
+            <Mockup data={this.props.post.acf['mobile-img']}/>
+          }
           
-          <Mockup data={this.props.post.acf['mobile-img']}/>
-  
-          <BlockSmallTitle>Какие работы проведены</BlockSmallTitle>
-          <Article>
-            {this.props.post.acf['work-done']}
-          </Article>
-  
-          <div className="linkRow">
-            <a href={this.props.post.acf.link} target='_blank'>
-              <ButtonDefault>Перейти на сайт</ButtonDefault>
-            </a>
-          </div>
+          {
+            this.props.post.acf['work-done'] &&
+            <>
+              <BlockSmallTitle>Какие работы проведены</BlockSmallTitle>
+              <Article>
+                {this.props.post.acf['work-done']}
+              </Article>
+            </>
+          }
+          
+          {
+            this.props.post.acf.link &&
+            <div className="linkRow">
+              <a href={this.props.post.acf.link} target='_blank'>
+                <ButtonDefault>Перейти на сайт</ButtonDefault>
+              </a>
+            </div>
+          }
+        
         </Container>
       </Layout>
     );
