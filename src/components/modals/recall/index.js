@@ -1,5 +1,5 @@
 import {Modal} from '../modal';
-import {validateName, validatePhone} from '../../../api/input-validators';
+import {validateName, validatePhone, validateEmail} from '../../../api/input-validators';
 
 const inputs = [
   {
@@ -18,7 +18,8 @@ const inputs = [
   {
     name: 'email',
     placeholder: 'E-mail*',
-    required: true
+    required: true,
+    validate: validateEmail
   }
 ]
 

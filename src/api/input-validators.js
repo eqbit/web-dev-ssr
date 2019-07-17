@@ -10,8 +10,8 @@ const validatePhone = phone => {
   if (phone) {
     let letters = /^[^a-zA-Z]+$/;
     
-    if(letters.test(phone)) {
-      return phone.replace(/\D/g, '').length > 10
+    if (letters.test(phone)) {
+      return phone.replace(/\D/g, '').length > 10;
     }
   }
   
@@ -26,4 +26,18 @@ const validateSite = site => {
   return false;
 };
 
-export {validateName, validatePhone, validateSite};
+const validateEmail = email => {
+  if (email && email.length > 3) {
+    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
+  
+  return false;
+};
+
+export {
+  validateName,
+  validatePhone,
+  validateSite,
+  validateEmail
+};
