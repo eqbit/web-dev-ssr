@@ -9,6 +9,7 @@ import {PureReactSliderStyles} from '../src/global-styles/pure-react-slider';
 import {Mockup} from '../src/components/mockup';
 import {mobileDetect} from '../src/api/mobile-detect';
 import {PortfolioSliderDev} from '../src/components/blocks/portfolio-slider-dev';
+import striptags from 'striptags';
 
 class page extends React.PureComponent {
   constructor() {
@@ -35,7 +36,7 @@ class page extends React.PureComponent {
       <Layout data={
         {
           title: this.props.post.post_title,
-          description: `Портфолио. Разработка сайта. ${this.props.post.acf.description}`
+          description: `Портфолио. Разработка сайта. ${striptags(this.props.post.acf.description)}`
         }
       }>
         <style jsx>{`
