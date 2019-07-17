@@ -35,7 +35,7 @@ class page extends React.PureComponent {
       <Layout data={
         {
           title: this.props.post.post_title,
-          description: 'none yet'
+          description: `Портфолио. Разработка сайта. ${this.props.post.acf.description}`
         }
       }>
         <style jsx>{`
