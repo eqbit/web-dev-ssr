@@ -8,6 +8,7 @@ import {FancyboxStyles} from '../src/global-styles/fancybox';
 import {PureReactSliderStyles} from '../src/global-styles/pure-react-slider';
 import {Mockup} from '../src/components/mockup';
 import {mobileDetect} from '../src/api/mobile-detect';
+import {PortfolioSliderDev} from '../src/components/blocks/portfolio-slider-dev';
 
 class page extends React.PureComponent {
   constructor() {
@@ -62,6 +63,12 @@ class page extends React.PureComponent {
           && this.props.post.acf['after-work']
           && this.props.post.acf['before-work']
           && <PortfolioSlider post={this.props.post} isMobile={this.props.isMobile}/>
+        }
+  
+        {
+          this.props.post.acf.type === 'develop'
+          && this.props.post.acf['after-work']
+          && <PortfolioSliderDev post={this.props.post} isMobile={this.props.isMobile}/>
         }
         
         <Container>
