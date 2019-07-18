@@ -1,6 +1,6 @@
 class VkVidget extends React.Component {
   componentDidMount() {
-    VK.Widgets.CommunityMessages("vk_community_messages", 20003922);
+    VK.Widgets.CommunityMessages("vk_community_messages", 183139911, {expanded: "1",tooltipButtonText: "Есть вопрос?"});
   }
   
   render() {
