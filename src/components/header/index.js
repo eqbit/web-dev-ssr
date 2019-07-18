@@ -42,6 +42,7 @@ class Header extends React.PureComponent {
                 accurateTrackBounce:true,
                 webvisor:true
            });`}} />
+          <script src="https://vk.com/js/api/openapi.js?161" type="text/javascript"></script>
           <style dangerouslySetInnerHTML={{
             __html: `
               * {

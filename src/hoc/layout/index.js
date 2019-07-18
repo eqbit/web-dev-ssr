@@ -1,6 +1,7 @@
 import css from './style.scss';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
+import {VkVidget} from '../../components/vk-vidget';
 
 const Layout = props => (
   <>
@@ -14,6 +15,7 @@ const Layout = props => (
       <div className={css.footer}>
         <Footer />
       </div>
+      <VkVidget/>
     </div>
   </>
 );
