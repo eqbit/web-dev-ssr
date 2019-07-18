@@ -4,3 +4,4 @@ node_modules
 coverage
 yarn.lock
 *.log
+package-lock.*
