@@ -2,6 +2,7 @@ import Layout from '../src/hoc/layout';
 import {Container, PageTitle, Article} from '../src/components/styled';
 import {Brief} from '../src/components/brief';
 import { withRouter } from 'next/router';
+import {phone} from '../src/api/links';
 
 const data = {
   title: 'Бриф.',
@@ -29,8 +30,7 @@ const page = () => (
       <Container>
         <PageTitle>Заполните бриф</PageTitle>
         <Article>
-          Оставьте заявку, либо звоните, мы пообщаемся и сами все за вас заполним:
-          <a href="tel:+7 952 347 34 19" className='link'> +7 952 347 34 19</a>
+          Оставьте заявку, либо звоните, мы пообщаемся и сами все за вас заполним: +7(902)813-79-11
         </Article>
         
         <Brief/>
