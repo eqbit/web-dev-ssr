@@ -8,11 +8,7 @@ class VkVidget extends React.Component {
   
   render() {
     return (
-      <>
-        <div id='vk_community_messages'/>
-        <img src="https://vk.com/rtrg?p=VK-RTRG-387258-4g0JO" style="position:fixed; left:-999px;" alt=""/>
-      </>
-      
+      <div id='vk_community_messages'/>
     )
   }
 }
