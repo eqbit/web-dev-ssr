@@ -42,8 +42,7 @@ class Header extends React.PureComponent {
                 accurateTrackBounce:true,
                 webvisor:true
            });`}} />
-          <script src="https://vk.com/js/api/openapi.js?161" type="text/javascript"></script>
-          <script type="text/javascript" dangerouslySetInnerHTML={{__html: `!function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://vk.com/js/api/openapi.js?161",t.onload=function(){VK.Retargeting.Init("VK-RTRG-387258-4g0JO"),VK.Retargeting.Hit()},document.head.appendChild(t)}();`}} />
+          <script src="https://vk.com/js/api/openapi.js?161" type="text/javascript" />
           <style dangerouslySetInnerHTML={{
             __html: `
               * {

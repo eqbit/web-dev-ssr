@@ -4,6 +4,8 @@ class VkVidget extends React.Component {
       disableExpandChatSound: "1",
       tooltipButtonText: "напишите нам в vk"
     });
+    VK.Retargeting.Init("VK-RTRG-387258-4g0JO");
+    VK.Retargeting.Hit();
   }
   
   render() {
