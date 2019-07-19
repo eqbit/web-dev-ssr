@@ -22,6 +22,11 @@ class Header extends React.PureComponent {
     }));
   };
   
+  runPixel = () => {
+    VK.Retargeting.Init("VK-RTRG-387258-4g0JO");
+    VK.Retargeting.Hit();
+  };
+  
   render() {
     return (
       <>
@@ -42,7 +47,7 @@ class Header extends React.PureComponent {
                 accurateTrackBounce:true,
                 webvisor:true
            });`}} />
-          <script src="https://vk.com/js/api/openapi.js?161" type="text/javascript" />
+          <script src="https://vk.com/js/api/openapi.js?161" type="text/javascript" onLoad={this.runPixel}/>
           <style dangerouslySetInnerHTML={{
             __html: `
               * {
