@@ -14,9 +14,8 @@
   }
 
   @include mq(767px) {
-    margin-top: 40px;
     flex-direction: column;
-    align-items: center;
+    margin: 40px 0 0;
   }
 }
 

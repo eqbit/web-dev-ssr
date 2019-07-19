@@ -16,15 +16,15 @@ class Header extends React.PureComponent {
     };
   }
   
+  componentDidMount() {
+    VK.Retargeting.Init("VK-RTRG-387258-4g0JO");
+    VK.Retargeting.Hit();
+  }
+  
   handleBoard = e => {
     this.setState(prevState => ({
       boardOpen: !prevState.boardOpen
     }));
-  };
-  
-  runPixel = () => {
-    VK.Retargeting.Init("VK-RTRG-387258-4g0JO");
-    VK.Retargeting.Hit();
   };
   
   render() {
@@ -47,7 +47,7 @@ class Header extends React.PureComponent {
                 accurateTrackBounce:true,
                 webvisor:true
            });`}} />
-          <script src="https://vk.com/js/api/openapi.js?161" type="text/javascript" onLoad={this.runPixel}/>
+          <script src="https://vk.com/js/api/openapi.js?161" type="text/javascript" />
           <style dangerouslySetInnerHTML={{
             __html: `
               * {
