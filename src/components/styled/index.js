@@ -10,7 +10,7 @@ const BlockSmallTitle = props => <div className={css.pageSmallTitle}>{props.chil
 
 const Article = props => {
   if(typeof props.children === 'object') {
-    return <div>{props.children}</div>
+    return <div className={css.pageText}>{props.children}</div>
   } else {
     return <div className={css.pageText} dangerouslySetInnerHTML={{__html: props.children}}/>
   }
