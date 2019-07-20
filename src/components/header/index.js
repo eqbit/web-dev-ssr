@@ -32,11 +32,11 @@ class Header extends React.PureComponent {
       <>
         <Head>
           <meta name="yandex-verification" content="dd592ce767b93120" />
-          <title>{`${this.props.data.title} WebDev. Разработка и техническая поддежка сайтов`}</title>
+          <title>{`${this.props.data.title} WebDev. Разработка и техническая поддежка сайтовв Тюмени`}</title>
           <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,400i,700&display=swap" rel="stylesheet"/>
           <link rel="shortcut icon" type="image/x-icon" href="/static/img/favicon.ico"/>
-          <meta property="og:description"
-                 content={this.props.data.description}/>
+          <meta name="Description"
+                content={this.props.data.description}/>
           <script dangerouslySetInnerHTML={{__html: `(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
