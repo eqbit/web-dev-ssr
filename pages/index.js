@@ -6,7 +6,7 @@ import {Principles} from '../src/components/blocks/principles';
 import {Call} from '../src/components/blocks/call';
 
 const data = {
-  title: 'Создание сайтов под ключ в Тюмени',
+  title: 'Создание сайтов под ключ',
   description: `Разработка сайтов под ключ в Тюмени. Занимаемся созданием, SEO продвижением, технической поддержкой, редизайном сайтов`
 };
 
