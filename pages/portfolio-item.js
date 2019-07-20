@@ -100,7 +100,7 @@ class page extends React.PureComponent {
           {
             this.props.post.acf.link &&
             <div className="linkRow">
-              <a href={this.props.post.acf.link} target='_blank'>
+              <a href={this.props.post.acf.link} target='_blank' rel="nofollow noreferrer noopener noindex">
                 <ButtonDefault>Перейти на сайт</ButtonDefault>
               </a>
             </div>
