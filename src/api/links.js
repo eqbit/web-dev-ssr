@@ -1,8 +1,8 @@
 const be = 'https://www.behance.net/Mikhail_Bulatov';
 
 const phone = {
-  link: 'tel:+79028137911',
-  title: <span>+7 (902) <b>813-79-11</b></span>
+  link: 'tel:+79523473419',
+  title: <span>+7 (952) <b>347-34-19</b></span>
 };
 
 const mail = {
@@ -11,8 +11,3 @@ const mail = {
 };
 
 export {be, phone, mail}
-
-/*const phone = {
-  link: 'tel:+79523473419',
-  title: <span>+7 (952) <b>347-34-19</b></span>
-};*/
