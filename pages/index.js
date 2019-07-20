@@ -6,8 +6,8 @@ import {Principles} from '../src/components/blocks/principles';
 import {Call} from '../src/components/blocks/call';
 
 const data = {
-  title: '',
-  description: `Разработка и техподдержка сайтов. Доверьте свой сайт профессионалам`
+  title: 'Создание сайтов под ключ в Тюмени',
+  description: `Разработка сайтов под ключ в Тюмени. Занимаемся созданием, SEO продвижением, технической поддержкой, редизайном сайтов`
 };
 
 export default () => (
