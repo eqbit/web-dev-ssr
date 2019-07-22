@@ -4,8 +4,8 @@ import classNames from 'classnames';
 const Container = props => <div className={css.container}>{props.children}</div>;
 const LargeContainer = props => <div className={css.largeContainer}>{props.children}</div>;
 
-const PageTitle = props => <div className={css.pageTitle}>{props.children}</div>;
-const BlockTitle = props => <div className={css.blockTitle}>{props.children}</div>;
+const PageTitle = props => <h1 className={css.pageTitle}>{props.children}</h1>;
+const BlockTitle = props => <h2 className={css.blockTitle}>{props.children}</h2>;
 const BlockSmallTitle = props => <div className={css.pageSmallTitle}>{props.children}</div>;
 
 const Article = props => {

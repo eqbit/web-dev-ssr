@@ -2,21 +2,19 @@ import css from './style.scss';
 import {LargeContainer, BlockTitle, Container, ButtonDefault} from '../../styled';
 import {routes} from '../../../api/routes';
 import Link from '../../../hoc/active-link';
+import axios from 'axios/index';
 
-class PortfolioTiles extends React.PureComponent {
-  constructor() {
-    super();
+class PortfolioTiles extends React.Component {
+  constructor(props) {
+    super(props);
+    
     this.state = {
-      posts: [],
+      posts: this.props.posts.map(this.mapPosts),
       route: routes.portfolio,
       page: 0,
-      gotMore: true
+      gotMore: false
     };
   }
-  
-  componentDidMount() {
-    this.addPosts();
-  };
   
   addPosts = () => {
     const currentRoute = this.state.page

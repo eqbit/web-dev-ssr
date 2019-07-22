@@ -32,7 +32,7 @@ class TopBlock extends React.Component {
           </div>
           <Container>
             <div className={css.topBlockTitle}>Проектное <b>digital – агентство</b></div>
-            <div className={css.topBlockSubTitle}>Качественные сайты. Вовремя. Без накрутки</div>
+            <h1 className={css.topBlockSubTitle}>Разработка сайтов под ключ. Качественно. Вовремя. Без накрутки</h1>
             <div className={css.topBlockButtons}>
               <div className={css.topBlockButtonsItem}>
                 <ButtonDefault onClick={() => this.handlePopupOpen('recall')}>Связаться</ButtonDefault>
