@@ -6,9 +6,7 @@ const Error = () => (
     <img className={css.errorImg} src="/static/img/404.png" alt=""/>
     <div className={css.errorTitle}>404</div>
     <div className={css.errorSubtitle}>Запрашиваемая страница не найдена</div>
-    <Link href='/'>
-      <a className={css.errorLink}>На главную</a>
-    </Link>
+    <a href='/' className={css.errorLink}>На главную</a>
   </div>
 );
 
